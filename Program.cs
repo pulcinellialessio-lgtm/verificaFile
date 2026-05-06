@@ -82,7 +82,7 @@
             List<string> cittaVincente = new List<string>();
             List<int> numVincente = new List<int>();
 
-            using (StreamReader sr = new StreamReader("giocate_lotto_50.csv"))
+            using (StreamReader sr = new StreamReader("giocateLotto.csv"))
             {
                 string riga = sr.ReadLine();
                 riga = sr.ReadLine();
@@ -114,11 +114,6 @@
                     rigaSplit2 = riga.Split(",");
 
                     citta.Add(rigaSplit2[0]);
-                    num.Add(Convert.ToInt32(rigaSplit2[1]));
-                    num.Add(Convert.ToInt32(rigaSplit2[2]));
-                    num.Add(Convert.ToInt32(rigaSplit2[3]));
-                    num.Add(Convert.ToInt32(rigaSplit2[4]));
-                    num.Add(Convert.ToInt32(rigaSplit2[5]));
 
                     riga = sr.ReadLine();
                 }
@@ -126,7 +121,17 @@
 
             List<string> nomeVincente = new List<string>();
 
+            foreach(string s in citta)
+            {
+                Console.WriteLine(s);
+            }
 
+            Console.WriteLine();
+
+            foreach (string s in cittaVincente)
+            {
+                Console.WriteLine(s);
+            }
         }
         static void Main(string[] args)
         {
@@ -136,6 +141,7 @@
 
             es3(file);
             es1(ruote);
+            es2(ruote);
         }
     }
 }
